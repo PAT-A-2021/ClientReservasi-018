@@ -193,7 +193,7 @@ namespace ClientReservasi_018.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IDPemesananField;
+        private string IDReservasiField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int JumlahPemesananField;
@@ -205,7 +205,7 @@ namespace ClientReservasi_018.ServiceReference1 {
         private string NamaCustomerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NoTelponField;
+        private string NoTeleponField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -218,14 +218,14 @@ namespace ClientReservasi_018.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string IDPemesanan {
+        public string IDReservasi {
             get {
-                return this.IDPemesananField;
+                return this.IDReservasiField;
             }
             set {
-                if ((object.ReferenceEquals(this.IDPemesananField, value) != true)) {
-                    this.IDPemesananField = value;
-                    this.RaisePropertyChanged("IDPemesanan");
+                if ((object.ReferenceEquals(this.IDReservasiField, value) != true)) {
+                    this.IDReservasiField = value;
+                    this.RaisePropertyChanged("IDReservasi");
                 }
             }
         }
@@ -270,14 +270,107 @@ namespace ClientReservasi_018.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NoTelpon {
+        public string NoTelepon {
             get {
-                return this.NoTelponField;
+                return this.NoTeleponField;
             }
             set {
-                if ((object.ReferenceEquals(this.NoTelponField, value) != true)) {
-                    this.NoTelponField = value;
-                    this.RaisePropertyChanged("NoTelpon");
+                if ((object.ReferenceEquals(this.NoTeleponField, value) != true)) {
+                    this.NoTeleponField = value;
+                    this.RaisePropertyChanged("NoTelepon");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataRegister", Namespace="http://schemas.datacontract.org/2004/07/ServiceReservasi")]
+    [System.SerializableAttribute()]
+    public partial class DataRegister : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string usernameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string passwordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string kategoriField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string username {
+            get {
+                return this.usernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.usernameField, value) != true)) {
+                    this.usernameField = value;
+                    this.RaisePropertyChanged("username");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string password {
+            get {
+                return this.passwordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.passwordField, value) != true)) {
+                    this.passwordField = value;
+                    this.RaisePropertyChanged("password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public string kategori {
+            get {
+                return this.kategoriField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.kategoriField, value) != true)) {
+                    this.kategoriField = value;
+                    this.RaisePropertyChanged("kategori");
                 }
             }
         }
@@ -297,22 +390,22 @@ namespace ClientReservasi_018.ServiceReference1 {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/pemesanan", ReplyAction="http://tempuri.org/IService1/pemesananResponse")]
-        string pemesanan(string IDPemesanan, string NamaCustomer, string NoTelpon, int JumlahPemesanan, string IDLokasi);
+        string pemesanan(string IDReservasi, string NamaCustomer, string NoTelepon, int JumlahPemesanan, string IDLokasi);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/pemesanan", ReplyAction="http://tempuri.org/IService1/pemesananResponse")]
-        System.Threading.Tasks.Task<string> pemesananAsync(string IDPemesanan, string NamaCustomer, string NoTelpon, int JumlahPemesanan, string IDLokasi);
+        System.Threading.Tasks.Task<string> pemesananAsync(string IDReservasi, string NamaCustomer, string NoTelepon, int JumlahPemesanan, string IDLokasi);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/editPemesanan", ReplyAction="http://tempuri.org/IService1/editPemesananResponse")]
-        string editPemesanan(string IDPemesanan, string NamaCustomer, string NoTelpon);
+        string editPemesanan(string IDReservasi, string NamaCustomer, string No_telepon);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/editPemesanan", ReplyAction="http://tempuri.org/IService1/editPemesananResponse")]
-        System.Threading.Tasks.Task<string> editPemesananAsync(string IDPemesanan, string NamaCustomer, string NoTelpon);
+        System.Threading.Tasks.Task<string> editPemesananAsync(string IDReservasi, string NamaCustomer, string No_telepon);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deletePemesanan", ReplyAction="http://tempuri.org/IService1/deletePemesananResponse")]
-        string deletePemesanan(string IDPemesanan);
+        string deletePemesanan(string IDReservasi);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deletePemesanan", ReplyAction="http://tempuri.org/IService1/deletePemesananResponse")]
-        System.Threading.Tasks.Task<string> deletePemesananAsync(string IDPemesanan);
+        System.Threading.Tasks.Task<string> deletePemesananAsync(string IDReservasi);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ReviewLokasi", ReplyAction="http://tempuri.org/IService1/ReviewLokasiResponse")]
         ClientReservasi_018.ServiceReference1.CekLokasi[] ReviewLokasi();
@@ -332,6 +425,36 @@ namespace ClientReservasi_018.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Pemesanan", ReplyAction="http://tempuri.org/IService1/PemesananResponse")]
         System.Threading.Tasks.Task<ClientReservasi_018.ServiceReference1.PemesananResponse> Pemesanan1Async(ClientReservasi_018.ServiceReference1.PemesananRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
+        string Login(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
+        System.Threading.Tasks.Task<string> LoginAsync(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Register", ReplyAction="http://tempuri.org/IService1/RegisterResponse")]
+        string Register(string username, string password, string kategori);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Register", ReplyAction="http://tempuri.org/IService1/RegisterResponse")]
+        System.Threading.Tasks.Task<string> RegisterAsync(string username, string password, string kategori);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateRegister", ReplyAction="http://tempuri.org/IService1/UpdateRegisterResponse")]
+        string UpdateRegister(string username, string password, string kategori, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateRegister", ReplyAction="http://tempuri.org/IService1/UpdateRegisterResponse")]
+        System.Threading.Tasks.Task<string> UpdateRegisterAsync(string username, string password, string kategori, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteRegister", ReplyAction="http://tempuri.org/IService1/DeleteRegisterResponse")]
+        string DeleteRegister(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteRegister", ReplyAction="http://tempuri.org/IService1/DeleteRegisterResponse")]
+        System.Threading.Tasks.Task<string> DeleteRegisterAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DataRegist", ReplyAction="http://tempuri.org/IService1/DataRegistResponse")]
+        ClientReservasi_018.ServiceReference1.DataRegister[] DataRegist();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DataRegist", ReplyAction="http://tempuri.org/IService1/DataRegistResponse")]
+        System.Threading.Tasks.Task<ClientReservasi_018.ServiceReference1.DataRegister[]> DataRegistAsync();
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -388,28 +511,28 @@ namespace ClientReservasi_018.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public string pemesanan(string IDPemesanan, string NamaCustomer, string NoTelpon, int JumlahPemesanan, string IDLokasi) {
-            return base.Channel.pemesanan(IDPemesanan, NamaCustomer, NoTelpon, JumlahPemesanan, IDLokasi);
+        public string pemesanan(string IDReservasi, string NamaCustomer, string NoTelepon, int JumlahPemesanan, string IDLokasi) {
+            return base.Channel.pemesanan(IDReservasi, NamaCustomer, NoTelepon, JumlahPemesanan, IDLokasi);
         }
         
-        public System.Threading.Tasks.Task<string> pemesananAsync(string IDPemesanan, string NamaCustomer, string NoTelpon, int JumlahPemesanan, string IDLokasi) {
-            return base.Channel.pemesananAsync(IDPemesanan, NamaCustomer, NoTelpon, JumlahPemesanan, IDLokasi);
+        public System.Threading.Tasks.Task<string> pemesananAsync(string IDReservasi, string NamaCustomer, string NoTelepon, int JumlahPemesanan, string IDLokasi) {
+            return base.Channel.pemesananAsync(IDReservasi, NamaCustomer, NoTelepon, JumlahPemesanan, IDLokasi);
         }
         
-        public string editPemesanan(string IDPemesanan, string NamaCustomer, string NoTelpon) {
-            return base.Channel.editPemesanan(IDPemesanan, NamaCustomer, NoTelpon);
+        public string editPemesanan(string IDReservasi, string NamaCustomer, string No_telepon) {
+            return base.Channel.editPemesanan(IDReservasi, NamaCustomer, No_telepon);
         }
         
-        public System.Threading.Tasks.Task<string> editPemesananAsync(string IDPemesanan, string NamaCustomer, string NoTelpon) {
-            return base.Channel.editPemesananAsync(IDPemesanan, NamaCustomer, NoTelpon);
+        public System.Threading.Tasks.Task<string> editPemesananAsync(string IDReservasi, string NamaCustomer, string No_telepon) {
+            return base.Channel.editPemesananAsync(IDReservasi, NamaCustomer, No_telepon);
         }
         
-        public string deletePemesanan(string IDPemesanan) {
-            return base.Channel.deletePemesanan(IDPemesanan);
+        public string deletePemesanan(string IDReservasi) {
+            return base.Channel.deletePemesanan(IDReservasi);
         }
         
-        public System.Threading.Tasks.Task<string> deletePemesananAsync(string IDPemesanan) {
-            return base.Channel.deletePemesananAsync(IDPemesanan);
+        public System.Threading.Tasks.Task<string> deletePemesananAsync(string IDReservasi) {
+            return base.Channel.deletePemesananAsync(IDReservasi);
         }
         
         public ClientReservasi_018.ServiceReference1.CekLokasi[] ReviewLokasi() {
@@ -447,6 +570,46 @@ namespace ClientReservasi_018.ServiceReference1 {
         public System.Threading.Tasks.Task<ClientReservasi_018.ServiceReference1.PemesananResponse> Pemesanan1Async() {
             ClientReservasi_018.ServiceReference1.PemesananRequest inValue = new ClientReservasi_018.ServiceReference1.PemesananRequest();
             return ((ClientReservasi_018.ServiceReference1.IService1)(this)).Pemesanan1Async(inValue);
+        }
+        
+        public string Login(string username, string password) {
+            return base.Channel.Login(username, password);
+        }
+        
+        public System.Threading.Tasks.Task<string> LoginAsync(string username, string password) {
+            return base.Channel.LoginAsync(username, password);
+        }
+        
+        public string Register(string username, string password, string kategori) {
+            return base.Channel.Register(username, password, kategori);
+        }
+        
+        public System.Threading.Tasks.Task<string> RegisterAsync(string username, string password, string kategori) {
+            return base.Channel.RegisterAsync(username, password, kategori);
+        }
+        
+        public string UpdateRegister(string username, string password, string kategori, int id) {
+            return base.Channel.UpdateRegister(username, password, kategori, id);
+        }
+        
+        public System.Threading.Tasks.Task<string> UpdateRegisterAsync(string username, string password, string kategori, int id) {
+            return base.Channel.UpdateRegisterAsync(username, password, kategori, id);
+        }
+        
+        public string DeleteRegister(string username) {
+            return base.Channel.DeleteRegister(username);
+        }
+        
+        public System.Threading.Tasks.Task<string> DeleteRegisterAsync(string username) {
+            return base.Channel.DeleteRegisterAsync(username);
+        }
+        
+        public ClientReservasi_018.ServiceReference1.DataRegister[] DataRegist() {
+            return base.Channel.DataRegist();
+        }
+        
+        public System.Threading.Tasks.Task<ClientReservasi_018.ServiceReference1.DataRegister[]> DataRegistAsync() {
+            return base.Channel.DataRegistAsync();
         }
     }
 }
